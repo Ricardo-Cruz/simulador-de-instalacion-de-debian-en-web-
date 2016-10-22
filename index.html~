@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>getElementById example</title>
+    <script>
+      var ubicacion = 0;
+
+      function deseleccionar() {
+      var num = ubicacion;
+      var n = num.toString();
+      var boton_actual = document.getElementById(n);
+      var color_normal='red';
+      boton_actual.style.background = color_normal;            
+      }
+
+      function seleccionar( movimiento) {
+      var num = ubicacion + movimiento;
+      ubicacion = num;
+      var n = num.toString();
+      var boton_seleccionado = document.getElementById(n);
+      var color_normal='blue';
+      boton_seleccionado.style.background = color_normal;      
+      }      
+      
+      function cambiarSeleccion( boton_selecionado ) {
+      deseleccionar();
+      seleccionar( boton_selecionado );
+      }
+
+      document.onkeydown = checkKey;
+      
+      function checkKey(e) {
+
+      e = e || window.event;
+      
+      if (e.keyCode == '38') {
+      // up arrow
+      cambiarSeleccion(-1);
+      }
+      else if (e.keyCode == '40') {
+      // down arrow
+      cambiarSeleccion(1);
+      }
+      else if (e.keyCode == '37') {
+      // left arrow
+      }
+      else if (e.keyCode == '39') {
+      // right arrow
+      cambiarSeleccion('0');
+      }
+      
+}
+    </script>
+    <style>
+      .botones{
+      color: #9a9a9a;
+      }
+      .posicionaAbajo{
+      
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Debian GNU/Linux installer boot menu</h1>
+    <div id="menu">
+      <p id="0" class="botones"><span>I</span>nstall</p>
+      <p id="1"><span>6</span>4 bit install</p>
+      <p id="2"><span>G</span>raphical install</p>
+      <p id="3">64 bit graphical install</p>
+      <p id="4"><span>A</span>dvanced options</p>  
+      <p id="5"><span>H</span>elp</p>  
+      <p id="6">Install with speech synthesis</p>  
+      <p id="7">64 bit speech install</p>  
+    </div>  
+    <p class="posicionaAbajo" id="texto_instrucciones">Press ENTER to boot or TAB to edit a menu entry</p>  </body>
+</html>
