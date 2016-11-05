@@ -17,10 +17,12 @@
       ubicacion = ubicacion + desplazamiento;
       if ( ubicacion >= cardinalidad ) {
       ubicacion = 0;
-      } else if (ubicacion < 0 ) {
-			     ubicacion = cardinalidad -1;
-			     }
-      var n = ubicacion.toString();
+      }
+      else if (ubicacion < 0 )
+			   {
+			   ubicacion = cardinalidad -1;
+			   }
+			   var n = ubicacion.toString();
       var boton_seleccionado = document.getElementById(n);
       var color_normal = 'blue';
       boton_seleccionado.style.background = color_normal;      
@@ -50,11 +52,12 @@
       }
       else if (e.keyCode == '39') {
       // right arrow
-      cambiarSeleccion('0');
-      }
-      
-}
-    </script>
+      //cambiarSeleccion('0');
+			   }
+			   
+			   }
+
+			   </script>
     <style>
       .botones{
       color: #9a9a9a;
@@ -62,19 +65,49 @@
       .posicionaAbajo{
       
       }
+      .simulador { 
+      background: url(imagenes/splash.png) no-repeat fixed;
+      height: 480px;
+      -webkit-background-size: inherit;
+      -moz-background-size: inherit;
+      -o-background-size: inherit;
+      background-size: inherit;
+      color: #ffffff;
+      }
+      body{
+      background: #000;
+      }
+      .contenedor_central{
+      position: absolute;
+      width: 429px;      
+      }
+      .menu{
+      position: absolute;
+      
+      }
+      h1{
+      font-size: 17px;
+      }
     </style>
   </head>
   <body>
-    <h1>Debian GNU/Linux installer boot menu</h1>
-    <div id="menu">
-      <p id="0" class="botones"><span>I</span>nstall</p>
-      <p id="1"><span>6</span>4 bit install</p>
-      <p id="2"><span>G</span>raphical install</p>
-      <p id="3">64 bit graphical install</p>
-      <p id="4"><span>A</span>dvanced options</p>  
-      <p id="5"><span>H</span>elp</p>  
-      <p id="6">Install with speech synthesis</p>  
-      <p id="7">64 bit speech install</p>  
-    </div>  
-    <p class="posicionaAbajo" id="texto_instrucciones">Press ENTER to boot or TAB to edit a menu entry</p>  </body>
+    <div class="simulador">
+      <div class="contenedor_central">
+	<h1>Debian GNU/Linux installer boot menu</h1>
+	<div id="menu">
+	  <p id="0" class="botones"><span>I</span>nstall</p>
+	  <p id="1"><span>6</span>4 bit install</p>
+	  <p id="2"><span>G</span>raphical install</p>
+	  <p id="3">64 bit graphical install</p>
+	  <p id="4"><span>A</span>dvanced options</p>  
+	  <p id="5"><span>H</span>elp</p>  
+	  <p id="6">Install with speech synthesis</p>  
+	  <p id="7">64 bit speech install</p>  
+	</div>
+      </div>
+      
+      <p class="posicionaAbajo" id="texto_instrucciones">Press ENTER to boot or TAB to edit a menu entry</p>
+    </div>
+    
+  </body>
 </html>
